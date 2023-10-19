@@ -17,3 +17,39 @@
 </html>
 
 
+<?php
+    //define variable and set to empty values
+    $name= $phone = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = test_input($_POST["name"]);
+        $phone = test_input($_POST["phone"]);
+    }
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+
+    // define variables and set to empty values
+    $nameErr = $phoneErr = "";
+    $name = $phone= "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["name"])) {
+            $nameErr = "Name is required";
+        } else {
+            $name = test_input($_POST["name"]);
+        }
+
+        if (empty($_POST["phone"])) {
+            $phoneErr = "Phone is required";
+        } else {
+            $phone = test_input($_POST["phone"]);
+        }
+
+    }
+
