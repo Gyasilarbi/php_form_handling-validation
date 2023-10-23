@@ -14,11 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
    
-    if (empty($_POST["phone"])) {
-        $phoneErr = "Phone is required";
-    } else {
-        $phone = test_input($_POST["phone"]);
-    }
+    
 }
 
 function test_input($data) {
