@@ -13,7 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = test_input($_POST["name"]);
     }
 
-   
+   nif (empty($_POST["phone"])) {
+        $phoneErr = "Phone is required";
+    } else {
+        $phone = test_input($_POST["phone"]);
+    }
     
 }
 
